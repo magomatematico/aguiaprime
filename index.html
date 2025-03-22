@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Águia Prime</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .iframe-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Estilo do botão WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; /* Mudado para canto inferior direito */
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .whatsapp-float img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .whatsapp-float a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #25D366;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float a:hover {
+            background-color: #20b354;
+        }
+
+        /* Estilo das notificações */
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .notification.show {
+            opacity: 1;
+        }
+
+        /* Media query para smartphones */
+        @media only screen and (max-width: 768px) {
+            .iframe-container {
+                position: absolute;
+            }
+
+            .whatsapp-float img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .whatsapp-float a {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .notification {
+                font-size: 12px;
+                padding: 8px 15px;
+                width: 90%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe src="https://app.aguiaprime119000.com/pr/5sYd3WZf" allowfullscreen></iframe>
+    </div>
+
+    <!-- Botão flutuante WhatsApp -->
+    <div class="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <a href="https://wa.me/5583991345771" target="_blank">Chame suporte</a>
+    </div>
+
+    <!-- Container para notificações -->
+    <div id="notification" class="notification"></div>
+
+    <script>
+        // Lista de nomes fictícios
+        const names = [
+            "João Silva", "Maria Oliveira", "Pedro Santos", "Ana Costa", 
+            "Lucas Almeida", "Julia Pereira", "Carlos Souza", "Beatriz Lima"
+        ];
+
+        // Função para mostrar notificação
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            notification.textContent = `${randomName} acabou de se cadastrar`;
+            
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000); // Notificação visível por 3 segundos
+        }
+
+        // Mostra primeira notificação após 2 segundos
+        setTimeout(showNotification, 2000);
+
+        // Repete a cada 10 segundos
+        setInterval(showNotification, 10000);
+    </script>
+</body>
+</html>
