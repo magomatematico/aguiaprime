@@ -163,7 +163,6 @@
             width: auto;
             display: inline-block;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            cursor: move;
             user-select: none;
             z-index: 1000;
         }
@@ -186,50 +185,9 @@
     </style>
 </head>
 <body>
-    <div class="backlink" id="draggableBacklink">
+    <div class="backlink">
         <p style="margin: 0; display: inline;">Visite: <a href="https://www.aguiaoficialbet.com/" target="_blank" rel="noopener noreferrer">Águia Oficial Bet</a></p>
         <span class="close-btn" onclick="this.parentElement.style.display='none'">✖</span>
     </div>
-
-    <script>
-        const backlink = document.getElementById('draggableBacklink');
-        let isDragging = false;
-        let currentX;
-        let currentY;
-        let initialX;
-        let initialY;
-
-        backlink.addEventListener('mousedown', startDragging);
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', stopDragging);
-
-        function startDragging(e) {
-            initialX = e.clientX - currentX;
-            initialY = e.clientY - currentY;
-            isDragging = true;
-        }
-
-        function drag(e) {
-            if (isDragging) {
-                e.preventDefault();
-                currentX = e.clientX - initialX;
-                currentY = e.clientY - initialY;
-                backlink.style.left = currentX + 'px';
-                backlink.style.top = currentY + 'px';
-                backlink.style.bottom = 'auto';
-                backlink.style.transform = 'none';
-            }
-        }
-
-        function stopDragging() {
-            isDragging = false;
-        }
-
-        // Posição inicial
-        currentX = window.innerWidth / 2 - backlink.offsetWidth / 2;
-        currentY = window.innerHeight - backlink.offsetHeight - 10;
-        backlink.style.left = currentX + 'px';
-        backlink.style.top = currentY + 'px';
-    </script>
 </body>
 </html>
