@@ -100,6 +100,7 @@
             color: #fff;
             padding: 10px 20px;
             display: flex;
+            flex-direction: column; /* Organiza em coluna */
             align-items: center;
             justify-content: center;
             z-index: 1000;
@@ -110,7 +111,7 @@
 
         .notice-bar p {
             margin: 0;
-            flex-grow: 1;
+            margin-bottom: 10px; /* Espaço entre o texto e o ícone */
         }
 
         .notice-bar a {
@@ -118,9 +119,8 @@
         }
 
         .notice-bar img {
-            width: 30px;
-            height: 30px;
-            margin-left: 10px;
+            width: 40px; /* Aumentado de 30px para 40px */
+            height: 40px; /* Aumentado de 30px para 40px */
             transition: transform 0.3s ease;
         }
 
@@ -140,9 +140,8 @@
             }
 
             .notice-bar img {
-                width: 25px;
-                height: 25px;
-                margin-left: 8px;
+                width: 32px; /* Aumentado de 25px para 32px */
+                height: 32px; /* Aumentado de 25px para 32px */
             }
         }
     </style>
