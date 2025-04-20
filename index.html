@@ -77,9 +77,6 @@
         }
         
         .iframe-container {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
         }
@@ -92,7 +89,7 @@
 
         /* Estilo da faixa de aviso */
         .notice-bar {
-            position: relative; /* Alterado de fixed para relative */
+            position: relative; /* Ocupa espaço no fluxo da página */
             width: 100%;
             background-color: #000;
             color: #fff;
@@ -145,16 +142,16 @@
 
         /* Ajuste do iframe para começar abaixo da faixa */
         .iframe-container {
-            position: relative;
-            top: auto; /* Remove posicionamento fixo */
-            height: calc(100% - 80px); /* Ajusta altura para ocupar espaço restante */
-            margin-top: 80px; /* Empurra o iframe para baixo da faixa */
+            position: absolute;
+            top: 80px; /* Altura estimada da faixa */
+            left: 0;
+            height: calc(100% - 80px); /* Ocupa o espaço restante */
         }
 
         /* Media query para smartphones */
         @media only screen and (max-width: 768px) {
             .iframe-container {
-                margin-top: 70px; /* Menor margem em dispositivos móveis */
+                top: 70px; /* Menor altura em dispositivos móveis */
                 height: calc(100% - 70px); /* Ajusta altura */
             }
 
