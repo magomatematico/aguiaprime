@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head><meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Título da Página (O mais relevante para SEO) -->
@@ -33,7 +34,7 @@
     <link rel="canonical" href="https://aguiaprime.net/">
 
     <!-- Favicon -->
-    <link rel="icon" href="URL_DO_FAVICON" type="image/png">
+    <link rel="icon" href="/favicon.png" type="image/png">
 
     <!-- Estruturação de dados JSON-LD (Ajuda no ranqueamento e nos rich snippets do Google) -->
     <script type="application/ld+json">
@@ -51,11 +52,7 @@
         ]
     }
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Águia Prime</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCD1S9Q54H"></script>
     <script>
@@ -76,6 +73,7 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
+            pointer-events: none; /* Impede cliques em todo o conteúdo */
         }
         
         .iframe-container {
@@ -92,24 +90,42 @@
             border: none;
         }
 
-        /* Estilo do botão WhatsApp */
-        .whatsapp-float {
+        /* Estilo da faixa de aviso */
+        .notice-bar {
             position: fixed;
-            bottom: 20px;
-            left: 20px; /* Movido para o lado esquerdo */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
+            justify-content: center;
             z-index: 1000;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
         }
 
-        .whatsapp-float img {
-            width: 50px;
-            height: 50px;
-            transition: all 0.3s ease;
+        .notice-bar p {
+            margin: 0;
+            flex-grow: 1;
         }
 
-        .whatsapp-float img:hover {
-            transform: scale(1.1); /* Efeito de hover no ícone */
+        .notice-bar a {
+            pointer-events: auto; /* Permite cliques apenas no ícone */
+        }
+
+        .notice-bar img {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .notice-bar img:hover {
+            transform: scale(1.1);
         }
 
         /* Media query para smartphones */
@@ -118,76 +134,29 @@
                 position: absolute;
             }
 
-            .whatsapp-float img {
-                width: 40px;
-                height: 40px;
+            .notice-bar {
+                font-size: 12px;
+                padding: 8px 15px;
+            }
+
+            .notice-bar img {
+                width: 25px;
+                height: 25px;
+                margin-left: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="iframe-container">
-        <iframe src="https://app.aguiaprime119000.com/pr/5sYd3WZf" allowfullscreen></iframe>
-    </div>
-
-    <!-- Botão flutuante WhatsApp (apenas ícone) -->
-    <div class="whatsapp-float">
-        <a href="https://wa.me/5583991345771" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <div class="notice-bar">
+        <p>AVISO: nosso site encontra-se com uma instabilidade, acesse nosso site parceiro enquanto corrigimos o problema</p>
+        <a href="https://www.aguiaoficialbet.com/" target="_blank" rel="noopener noreferrer">
+            <img src="https://trivo-assets.pages.dev/images/aguiaoficial.png" alt="Águia Oficial Bet">
         </a>
     </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backlink para Águia Oficial Bet</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-        }
-        .backlink {
-            text-align: justify;
-            padding: 5px 10px;
-            background-color: rgba(255, 255, 255, 0.9);
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: auto;
-            display: inline-block;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            user-select: none;
-            z-index: 1000;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .close-btn {
-            display: inline-block;
-            margin-left: 10px;
-            cursor: pointer;
-            font-size: 12px;
-            color: #ff0000;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div class="backlink">
-        <p style="margin: 0; display: inline;">Visite: <a href="https://www.aguiaoficialbet.com/" target="_blank" rel="noopener noreferrer">Águia Oficial Bet</a></p>
-        <span class="close-btn" onclick="this.parentElement.style.display='none'">✖</span>
+
+    <div class="iframe-container">
+        <iframe src="https://app.aguiaprime119000.com/pr/5sYd3WZf" allowfullscreen></iframe>
     </div>
 </body>
 </html>
