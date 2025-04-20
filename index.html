@@ -115,17 +115,34 @@
         }
 
         .notice-bar a {
-            pointer-events: auto; /* Permite cliques apenas no ícone */
+            pointer-events: auto; /* Permite cliques apenas no link */
+            text-decoration: none; /* Remove sublinhado do link */
         }
 
         .notice-bar img {
-            width: 40px; /* Aumentado de 30px para 40px */
-            height: 40px; /* Aumentado de 30px para 40px */
+            width: 50px; /* Aumentado de 40px para 50px */
+            height: 50px; /* Aumentado de 40px para 50px */
             transition: transform 0.3s ease;
         }
 
         .notice-bar img:hover {
             transform: scale(1.1);
+        }
+
+        /* Container para o ícone e a frase com contorno */
+        .link-container {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Espaço entre ícone e frase */
+            border: 2px solid #fff; /* Contorno branco */
+            padding: 5px 10px; /* Espaço interno */
+            border-radius: 5px; /* Bordas arredondadas */
+        }
+
+        .link-container span {
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         /* Media query para smartphones */
@@ -140,8 +157,12 @@
             }
 
             .notice-bar img {
-                width: 32px; /* Aumentado de 25px para 32px */
-                height: 32px; /* Aumentado de 25px para 32px */
+                width: 40px; /* Aumentado de 32px para 40px */
+                height: 40px; /* Aumentado de 32px para 40px */
+            }
+
+            .link-container span {
+                font-size: 12px;
             }
         }
     </style>
@@ -150,7 +171,10 @@
     <div class="notice-bar">
         <p>AVISO: nosso site encontra-se com uma instabilidade, acesse nosso site parceiro enquanto corrigimos o problema</p>
         <a href="https://www.aguiaoficialbet.com/" target="_blank" rel="noopener noreferrer">
-            <img src="https://trivo-assets.pages.dev/images/aguiaoficial.png" alt="Águia Oficial Bet">
+            <span class="link-container">
+                <img src="https://trivo-assets.pages.dev/images/aguiaoficial.png" alt="Águia Oficial Bet">
+                <span>Clique aqui</span>
+            </span>
         </a>
     </div>
 
