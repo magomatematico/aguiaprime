@@ -1,189 +1,109 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Título da Página (O mais relevante para SEO) -->
-    <title>Águia Prime - Jogo do Bicho, Cotações e Previsões | Oficial</title>
-
-    <!-- Descrição Meta (Máximo 160 caracteres, importante para o Google) -->
-    <meta name="description" content="Águia Prime Oficial - Confira cotações do jogo do bicho, previsões, resultados e novidades sobre a Águia Prime. Acesse e fique atualizado!">
-
-    <!-- Palavras-chave (O Google não usa diretamente, mas outros motores de busca podem) -->
-    <meta name="keywords" content="Águia Prime, Águia Oficial, Jogo do Bicho, Cotação do Jogo do Bicho, Resultados do Jogo do Bicho, Previsões Jogo do Bicho, Loteria, Acertos Prime, Apostas, Sorteio, Numerologia, Grupo do Bicho, Deu no Poste, Palpites do Jogo do Bicho">
-
-    <!-- Open Graph para Facebook e WhatsApp -->
-    <meta property="og:title" content="Águia Prime - Jogo do Bicho, Cotações e Previsões | Oficial">
-    <meta property="og:description" content="Águia Prime Oficial - Tudo sobre o jogo do bicho, cotações e previsões atualizadas. Acesse já!">
-    <meta property="og:image" content="https://assets.trivo.bet/images/aguiadeouro2.png">
-    <meta property="og:url" content="https://aguiaprime.net/">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Cards para melhor indexação no Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Águia Prime - Jogo do Bicho e Cotações">
-    <meta name="twitter:description" content="Águia Prime Oficial - Confira os palpites e resultados do Jogo do Bicho em tempo real!">
-    <meta name="twitter:image" content="https://assets.trivo.bet/images/aguiadeouro2.png">
-
-    <!-- Googlebot e Indexação -->
+    <meta name="description" content="Acesse o Águia Prime, o melhor app para apostas online, jogo do bicho, banca Águia Prime e Trivo. Faça suas apostas com segurança e praticidade!">
+    <meta name="keywords" content="Águia Prime, app Águia Prime, banca Águia Prime, Águia Prime jogo do bicho, jogo do bicho, apostas online, Trivo, apostas seguras, loterias online">
+    <meta name="author" content="Águia Prime">
     <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-
-    <!-- Canonical (Para evitar conteúdo duplicado) -->
-    <link rel="canonical" href="https://aguiaprime.net/">
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.png" type="image/png">
-
-    <!-- Estruturação de dados JSON-LD (Ajuda no ranqueamento e nos rich snippets do Google) -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Águia Prime",
-        "url": "https://aguiaprime.net/",
-        "logo": "https://assets.trivo.bet/images/aguiadeouro2.png",
-        "description": "Águia Prime Oficial - Tudo sobre jogo do bicho, cotações e previsões atualizadas.",
-        "sameAs": [
-            "https://www.facebook.com/SEUPERFIL",
-            "https://www.instagram.com/SEUPERFIL",
-            "https://twitter.com/SEUPERFIL"
-        ]
-    }
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCD1S9Q54H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YCD1S9Q54H');
-    </script>
-
+    <title>Águia Prime - Apostas Online e Jogo do Bicho</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
         body, html {
             height: 100%;
             width: 100%;
             overflow: hidden;
-            pointer-events: none; /* Impede cliques em todo o conteúdo */
         }
-        
-        .iframe-container {
+        .container {
+            position: relative;
+            height: 100vh;
             width: 100%;
-            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
-        
         iframe {
             width: 100%;
-            height: 100%;
+            flex-grow: 1;
             border: none;
+            position: relative;
+            z-index: 1;
         }
-
-        /* Estilo da faixa de aviso */
-        .notice-bar {
-            position: relative; /* Ocupa espaço no fluxo da página */
+        .buttons {
+            position: relative;
             width: 100%;
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
             display: flex;
-            flex-direction: column; /* Organiza em coluna */
+            justify-content: space-around;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 12px 0;
+            z-index: 2;
+        }
+        .button {
+            display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 1000;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            text-align: center;
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-
-        .notice-bar p {
-            margin: 0;
-            margin-bottom: 10px; /* Espaço entre o texto e o ícone */
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-
-        .notice-bar a {
-            pointer-events: auto; /* Permite cliques apenas no link */
-            text-decoration: none; /* Remove sublinhado do link */
+        .button img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
         }
-
-        .notice-bar img {
-            width: 50px; /* Tamanho do ícone */
-            height: 50px;
-            transition: transform 0.3s ease;
+        .button i {
+            font-size: 24px;
+            color: #25D366;
         }
-
-        .notice-bar img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Container para o ícone e a frase com contorno */
-        .link-container {
-            display: flex;
-            align-items: center;
-            gap: 8px; /* Espaço entre ícone e frase */
-            border: 2px solid #fff; /* Contorno branco */
-            padding: 5px 10px; /* Espaço interno */
-            border-radius: 5px; /* Bordas arredondadas */
-        }
-
-        .link-container span {
-            color: #fff;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        /* Ajuste do iframe para começar abaixo da faixa */
-        .iframe-container {
-            position: absolute;
-            top: 80px; /* Altura estimada da faixa */
-            left: 0;
-            height: calc(100% - 80px); /* Ocupa o espaço restante */
-        }
-
-        /* Media query para smartphones */
-        @media only screen and (max-width: 768px) {
-            .iframe-container {
-                top: 70px; /* Menor altura em dispositivos móveis */
-                height: calc(100% - 70px); /* Ajusta altura */
+        @media (max-width: 768px) {
+            .button {
+                width: 50px;
+                height: 50px;
             }
-
-            .notice-bar {
-                font-size: 12px;
-                padding: 8px 15px;
+            .button img, .button i {
+                width: 30px;
+                height: 30px;
+                font-size: 20px;
             }
-
-            .notice-bar img {
-                width: 40px; /* Tamanho do ícone em móveis */
-                height: 40px;
-            }
-
-            .link-container span {
-                font-size: 12px;
+            .buttons {
+                padding: 10px 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="notice-bar">
-        <p>AVISO: nosso site encontra-se com uma instabilidade, acesse nosso site parceiro enquanto corrigimos o problema</p>
-        <a href="https://www.aguiaoficialbet.com/" target="_blank" rel="noopener noreferrer">
-            <span class="link-container">
-                <img src="https://trivo-assets.pages.dev/images/aguiaoficial.png" alt="Águia Oficial Bet">
-                <span>Clique aqui</span>
-            </span>
-        </a>
-    </div>
-
-    <div class="iframe-container">
-        <iframe src="https://app.aguiaprime119000.com/pr/5sYd3WZf" allowfullscreen></iframe>
+    <div class="container">
+        <iframe src="https://app.aguiaprime119000.com/pr/4EIsxC3l" title="Águia Prime"></iframe>
+        <div class="buttons">
+            <a href="https://wa.me/83999719353" target="_blank" class="button">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://app.brazz.club/pr/t7gwBS8x" target="_blank" class="button">
+                <img src="/brazz.png" alt="Brazz Club">
+            </a>
+            <a href="https://app.goldenloterias.com/pr/d0qiuZKm" target="_blank" class="button">
+                <img src="/golden.png" alt="Golden Loterias">
+            </a>
+            <a href="https://www.aguiaoficialbet.com/" target="_blank" class="button">
+                <img src="/aguia.png" alt="Águia Oficial Bet">
+            </a>
+            <a href="https://app.tigersclub.vip/pr/5iTztjNb" target="_blank" class="button">
+                <img src="/tiger.png" alt="Tigers Club">
+            </a>
+        </div>
     </div>
 </body>
 </html>
