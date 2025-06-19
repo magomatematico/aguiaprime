@@ -35,16 +35,17 @@
             border: none;
             position: relative;
             z-index: 1;
+            margin-bottom: 100px; /* Space for buttons */
         }
         .buttons {
-            position: relative;
+            position: fixed;
+            bottom: 0;
             width: 100%;
             display: flex;
             justify-content: space-around;
             background: rgba(0, 0, 0, 0.95);
-            padding: 12px 0;
+            padding: 10px 0;
             z-index: 2;
-            margin-bottom: 60px; /* Increased to raise buttons further */
         }
         .button {
             display: flex;
@@ -101,8 +102,10 @@
                 font-size: 9px;
             }
             .buttons {
-                padding: 10px 0;
-                margin-bottom: 50px; /* Adjusted for mobile */
+                padding: 8px 0;
+            }
+            iframe {
+                margin-bottom: 80px; /* Adjusted for mobile */
             }
         }
         @media (max-width: 480px) {
@@ -119,8 +122,10 @@
                 font-size: 8px;
             }
             .buttons {
-                padding: 8px 0;
-                margin-bottom: 40px;
+                padding: 6px 0;
+            }
+            iframe {
+                margin-bottom: 70px; /* Adjusted for smaller screens */
             }
         }
     </style>
