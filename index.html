@@ -20,6 +20,7 @@
             height: 100%;
             width: 100%;
             overflow: hidden;
+            font-family: Arial, sans-serif;
         }
         .container {
             position: relative;
@@ -41,26 +42,27 @@
             display: flex;
             justify-content: space-around;
             background: rgba(0, 0, 0, 0.95);
-            padding: 10px 0;
+            padding: 12px 0;
             z-index: 2;
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* Increased to raise buttons slightly */
         }
         .button {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             background: rgba(50, 50, 50, 0.8);
-            border-radius: 8px;
+            border-radius: 10px;
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             text-decoration: none;
             color: #fff;
-            font-size: 12px;
+            font-size: 14px;
             text-align: center;
             cursor: pointer;
+            touch-action: manipulation; /* Improves touch responsiveness */
         }
         .button.selected {
             background: rgba(80, 80, 80, 1);
@@ -71,21 +73,39 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         }
         .button img {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             object-fit: contain;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
         .button i {
-            font-size: 24px;
+            font-size: 26px;
             color: #25D366;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
         .button span {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: bold;
         }
         @media (max-width: 768px) {
+            .button {
+                width: 70px;
+                height: 70px;
+            }
+            .button img, .button i {
+                width: 34px;
+                height: 34px;
+                font-size: 22px;
+            }
+            .button span {
+                font-size: 9px;
+            }
+            .buttons {
+                padding: 10px 0;
+                margin-bottom: 20px; /* Adjusted for mobile */
+            }
+        }
+        @media (max-width: 480px) {
             .button {
                 width: 60px;
                 height: 60px;
@@ -109,27 +129,27 @@
     <div class="container">
         <iframe id="mainFrame" src="https://app.aguiaprime119000.com/pr/4EIsxC3l" title="Águia Prime"></iframe>
         <div class="buttons">
-            <div class="button selected" onclick="changeIframe('https://app.aguiaprime119000.com/pr/4EIsxC3l', this)">
+            <div class="button selected" onclick="changeIframe('https://app.aguiaprime119000.com/pr/4EIsxC3l', this)" role="button" aria-label="Águia Prime">
                 <img src="/prime.png" alt="Águia Prime">
                 <span>Águia Prime</span>
             </div>
-            <div class="button" onclick="changeIframe('https://app.brazz.club/pr/t7gwBS8x', this)">
+            <div class="button" onclick="changeIframe('https://app.brazz.club/pr/t7gwBS8x', this)" role="button" aria-label="Brazz Club">
                 <img src="/brazz.png" alt="Brazz Club">
                 <span>Brazz Club</span>
             </div>
-            <div class="button" onclick="changeIframe('https://app.goldenloterias.com/pr/d0qiuZKm', this)">
+            <div class="button" onclick="changeIframe('https://app.goldenloterias.com/pr/d0qiuZKm', this)" role="button" aria-label="Golden Loterias">
                 <img src="/golden.png" alt="Golden Loterias">
                 <span>Golden Loterias</span>
             </div>
-            <div class="button" onclick="changeIframe('https://www.aguiaoficialbet.com/', this)">
+            <div class="button" onclick="changeIframe('https://www.aguiaoficialbet.com/', this)" role="button" aria-label="Águia Oficial">
                 <img src="/aguia.png" alt="Águia Oficial Bet">
                 <span>Águia Oficial</span>
             </div>
-            <div class="button" onclick="changeIframe('https://app.tigersclub.vip/pr/5iTztjNb', this)">
+            <div class="button" onclick="changeIframe('https://app.tigersclub.vip/pr/5iTztjNb', this)" role="button" aria-label="Tigers Club">
                 <img src="/tiger.png" alt="Tigers Club">
                 <span>Tigers Club</span>
             </div>
-            <a href="https://wa.me/83999719353" target="_blank" class="button">
+            <a href="https://wa.me/+5583999719353" target="_blank" class="button" role="button" aria-label="Suporte via WhatsApp">
                 <i class="fab fa-whatsapp"></i>
                 <span>Suporte</span>
             </a>
