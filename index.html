@@ -3,180 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Acesse o Águia Prime, o melhor app para apostas online, jogo do bicho, banca Águia Prime e Trivo. Faça suas apostas com segurança e praticidade!">
-    <meta name="keywords" content="Águia Prime, app Águia Prime, banca Águia Prime, Águia Prime jogo do bicho, jogo do bicho, apostas online, Trivo, apostas seguras, loterias online">
-    <meta name="author" content="Águia Prime">
-    <meta name="robots" content="index, follow">
-    <title>Águia Prime - Apostas Online e Jogo do Bicho</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Águia Prime Sport</title>
     <style>
-        * {
+        body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body, html {
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
         }
         .container {
-            position: relative;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
+            padding: 20px;
         }
-        iframe {
-            width: 100%;
-            flex-grow: 1;
-            border: none;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 100px; /* Space for buttons */
-        }
-        .buttons {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 10px 0;
-            z-index: 2;
-        }
-        .button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 90px;
-            height: 90px;
-            background: rgba(50, 50, 50, 0.8);
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            text-decoration: none;
-            color: #fff;
-            font-size: 14px;
-            text-align: center;
-            cursor: pointer;
-            touch-action: manipulation;
-        }
-        .button.selected {
-            background: rgba(80, 80, 80, 1);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        }
-        .button img {
-            width: 44px;
-            height: 44px;
-            object-fit: contain;
-            margin-bottom: 6px;
-        }
-        .button i {
-            font-size: 26px;
-            color: #25D366;
-            margin-bottom: 6px;
-        }
-        .button span {
-            font-size: 11px;
+        h1 {
+            font-size: 3em;
+            color: #1a73e8;
             font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
-        @media (max-width: 768px) {
-            .button {
-                width: 70px;
-                height: 70px;
-            }
-            .button img, .button i {
-                width: 34px;
-                height: 34px;
-                font-size: 22px;
-            }
-            .button span {
-                font-size: 9px;
-            }
-            .buttons {
-                padding: 8px 0;
-            }
-            iframe {
-                margin-bottom: 80px; /* Adjusted for mobile */
-            }
-        }
-        @media (max-width: 480px) {
-            .button {
-                width: 60px;
-                height: 60px;
-            }
-            .button img, .button i {
-                width: 30px;
-                height: 30px;
-                font-size: 20px;
-            }
-            .button span {
-                font-size: 8px;
-            }
-            .buttons {
-                padding: 6px 0;
-            }
-            iframe {
-                margin-bottom: 70px; /* Adjusted for smaller screens */
-            }
+        p {
+            font-size: 1.5em;
+            color: #333;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <iframe id="mainFrame" src="https://app.aguiaprime119000.com/pr/4EIsxC3l" title="Águia Prime"></iframe>
-        <div class="buttons">
-            <div class="button selected" onclick="changeIframe('https://app.aguiaprime119000.com/pr/4EIsxC3l', this)" role="button" aria-label="Águia Prime">
-                <img src="/prime.png" alt="Águia Prime">
-                <span>Águia Prime</span>
-            </div>
-            <div class="button" onclick="changeIframe('https://app.brazz.club/pr/t7gwBS8x', this)" role="button" aria-label="Brazz Club">
-                <img src="/brazz.png" alt="Brazz Club">
-                <span>Brazz Club</span>
-            </div>
-            <div class="button" onclick="changeIframe('https://app.goldenloterias.com/pr/d0qiuZKm', this)" role="button" aria-label="Golden Loterias">
-                <img src="/golden.png" alt="Golden Loterias">
-                <span>Golden Loterias</span>
-            </div>
-            <div class="button" onclick="changeIframe('https://www.aguiaoficialbet.com/', this)" role="button" aria-label="Águia Oficial">
-                <img src="/aguia.png" alt="Águia Oficial Bet">
-                <span>Águia Oficial</span>
-            </div>
-            <div class="button" onclick="changeIframe('https://app.tigersclub.vip/pr/5iTztjNb', this)" role="button" aria-label="Tigers Club">
-                <img src="/tiger.png" alt="Tigers Club">
-                <span>Tigers Club</span>
-            </div>
-            <a href="https://wa.me/" target="_blank" class="button" role="button" aria-label="Suporte via WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-                <span>Suporte</span>
-            </a>
-        </div>
+        <h1>ÁGUIA PRIME SPORT</h1>
+        <p>Domínio do site à venda!</p>
     </div>
-    <script>
-        function changeIframe(url, element) {
-            document.getElementById('mainFrame').src = url;
-            document.querySelectorAll('.button').forEach(btn => btn.classList.remove('selected'));
-            element.classList.add('selected');
-        }
-    </script>
 </body>
 </html>
-<div id="custom-widget" style="position: fixed; bottom: 20px; right: 20px; background-color: #f0f0f0; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); z-index: 1000; text-align: center; max-width: 90vw; width: 70vw; box-sizing: border-box;">
-  <h3 style="margin: 0 0 10px; font-size: clamp(14px, 4vw, 16px); color: #333;">Bem-vindo!</h3>
-  <p style="margin: 0 0 10px; font-size: clamp(12px, 3.5vw, 14px); color: #666;">🎁 30% de bônus até R$2.000 na 1ª recarga! Visite nossa banca parceira e aposte com vantagens!</p>
-  <a href="https://app.bancabrasileira.com.br/pr/cgapOeqn" target="_blank">
-    <img src="https://scontent.fjdo14-1.fna.fbcdn.net/v/t39.30808-6/502928715_122123104814819732_3486224366830256601_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Cx1-gV6Y2vQQ7kNvwHN03NP&_nc_oc=AdmBRjWSdi-3sFhg4AxqsThuWuDeybJ7uB4JkEMsZYmj1lvSzMiqpawiwtny3NPD5a1Wq9rU0P9rlvI3BHzm7dis&_nc_zt=23&_nc_ht=scontent.fjdo14-1.fna&_nc_gid=rJIwGKhEzv3sMkfUpgBdSg&oh=00_AfPK5iRYhQCo8zrsTzBYjYIjFxOOscf1t0vVVwHltIjZXg&oe=6862734B" alt="Promoção Banca Parceira" style="width: 100%; max-width: 100%; height: auto; border-radius: 4px; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto;">
-  </a>
-  <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-    <a href="https://app.bancabrasileira.com.br/pr/cgapOeqn" target="_blank" style="background-color: #28a745; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: clamp(12px, 3.5vw, 14px);">Ir para Banca Parceira</a>
-    <button onclick="this.parentElement.parentElement.style.display='none'" style="background-color: #007bff; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: clamp(12px, 3.5vw, 14px);">Fechar</button>
-  </div>
-</div>
