@@ -7,7 +7,7 @@
     <style>
         body {
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,17 +17,42 @@
         }
         .container {
             padding: 20px;
+            max-width: 90%;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             color: #1a73e8;
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 10px;
         }
         p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: #333;
+        }
+        /* Responsive design for smartphones */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+        /* Responsive design for desktops */
+        @media screen and (min-width: 601px) {
+            h1 {
+                font-size: 3.5em;
+            }
+            p {
+                font-size: 1.5em;
+            }
+            .container {
+                padding: 30px;
+            }
         }
     </style>
 </head>
