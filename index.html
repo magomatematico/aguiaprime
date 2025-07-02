@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carregando</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta http-equiv="refresh" content="40;url=https://app.bancabrasileira.com.br/pr/bIwlp2AU">
+    <title>Carregando</title>
     <style>
         * {
             margin: 0;
@@ -37,16 +40,28 @@
         }
     </style>
     <script>
-        // Redireciona após 40 segundos
-        setTimeout(function() {
+        // Função para redirecionar
+        function redirect() {
             window.location.replace("https://app.bancabrasileira.com.br/pr/bIwlp2AU");
-        }, 40000); // 40 segundos em milissegundos
+        }
 
-        // Captura tentativas de voltar no navegador ou recarregar
-        window.history.pushState(null, null, window.location.href);
+        // Redireciona após 40 segundos
+        setTimeout(redirect, 40000); // 40 segundos em milissegundos
+
+        // Adiciona estados ao histórico para bloquear o botão de voltar
+        history.pushState(null, null, window.location.href);
+        history.pushState(null, null, window.location.href); // Adiciona múltiplos estados
+
+        // Captura tentativas de voltar no navegador
         window.onpopstate = function () {
-            window.location.replace("https://app.bancabrasileira.com.br/pr/bIwlp2AU");
+            history.pushState(null, null, window.location.href); // Reinsere estado
+            redirect();
         };
+
+        // Garante redirecionamento ao tentar recarregar
+        window.addEventListener('beforeunload', function () {
+            redirect();
+        });
     </script>
 </head>
 <body>
