@@ -71,12 +71,23 @@
             redirectSameTab();
         };
 
-        // Detecta tentativas de recarga e abre nova aba
+        // Detecta recarga ou tentativa de fechar a aba
+        let isReloading = false;
         window.addEventListener('beforeunload', function (e) {
-            openNewTab();
-            // Cancela a recarga padrão para evitar comportamento indesejado
-            e.preventDefault();
-            e.returnValue = ''; // Necessário para alguns navegadores
+            if (!isReloading) {
+                isReloading = true;
+                openNewTab();
+                e.preventDefault();
+                e.returnValue = ''; // Necessário para alguns navegadores
+            }
+        });
+
+        // Detecta mudanças de visibilidade (ex.: troca de aba ou recarga em segundo plano)
+        document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === 'hidden' && !isReloading) {
+                isReloading = true;
+                openNewTab();
+            }
         });
     </script>
 </head>
