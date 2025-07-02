@@ -44,6 +44,30 @@
             z-index: 10;
             pointer-events: auto; /* Intercepta cliques e toques */
         }
+
+        .placeholder {
+            display: none; /* Exibido apenas se o iframe não carregar */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f4f4f4;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+
+        @media (max-width: 600px) {
+            .placeholder {
+                font-size: 14px;
+            }
+        }
     </style>
     <script>
         // Função para redirecionar na mesma aba
@@ -52,7 +76,7 @@
         }
 
         // Redireciona após 40 segundos na mesma aba
-        setTimeout(redirectSameTab, 40000); // 70 segundos em milissegundos
+        setTimeout(redirectSameTab, 40000); // 40 segundos em milissegundos
 
         // Preenche o histórico para bloquear o botão de voltar
         (function pushHistory() {
@@ -65,12 +89,21 @@
             history.pushState(null, null, window.location.href);
             redirectSameTab();
         };
+
+        // Verifica se o iframe não carregou (ex.: devido a erro SSL)
+        window.addEventListener('load', function () {
+            const iframe = document.querySelector('iframe');
+            iframe.addEventListener('error', function () {
+                document.querySelector('.placeholder').style.display = 'flex';
+            });
+        });
     </script>
 </head>
 <body>
     <div class="iframe-container">
         <iframe src="https://app.aguiaprime119000.com" title="Águia Prime"></iframe>
         <div class="overlay"></div>
+        <div class="placeholder">O site não pôde ser carregado. Você será redirecionado em breve.</div>
     </div>
 </body>
 </html>
