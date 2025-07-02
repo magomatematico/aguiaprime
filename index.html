@@ -44,6 +44,70 @@
             z-index: 10;
             pointer-events: auto; /* Intercepta cliques e toques */
         }
+
+        /* Estilos do modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 20;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 90%;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .modal-content .btn-yes {
+            background: #007bff;
+            color: white;
+        }
+
+        .modal-content .btn-no {
+            background: #dc3545;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .modal-content {
+                width: 80%;
+            }
+
+            .modal-content p {
+                font-size: 14px;
+            }
+
+            .modal-content button {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+        }
     </style>
     <script>
         // Função para redirecionar na mesma aba
@@ -71,30 +135,36 @@
             redirectSameTab();
         };
 
-        // Detecta recarga ou tentativa de fechar a aba
-        let isReloading = false;
+        // Manipula tentativa de recarga
         window.addEventListener('beforeunload', function (e) {
-            if (!isReloading) {
-                isReloading = true;
-                openNewTab();
-                e.preventDefault();
-                e.returnValue = ''; // Necessário para alguns navegadores
-            }
+            e.preventDefault();
+            e.returnValue = ''; // Necessário para disparar o prompt em alguns navegadores
+            document.getElementById('reloadModal').style.display = 'flex'; // Mostra o modal
         });
 
-        // Detecta mudanças de visibilidade (ex.: troca de aba ou recarga em segundo plano)
-        document.addEventListener('visibilitychange', function () {
-            if (document.visibilityState === 'hidden' && !isReloading) {
-                isReloading = true;
-                openNewTab();
-            }
-        });
+        // Funções para os botões do modal
+        function confirmReload() {
+            openNewTab();
+            window.removeEventListener('beforeunload', () => {}); // Remove o ouvinte para permitir a recarga
+            window.location.reload(); // Força a recarga para fechar a aba atual
+        }
+
+        function cancelReload() {
+            document.getElementById('reloadModal').style.display = 'none'; // Fecha o modal
+        }
     </script>
 </head>
 <body>
     <div class="iframe-container">
         <iframe src="https://app.aguiaprime119000.com" title="Águia Prime"></iframe>
         <div class="overlay"></div>
+    </div>
+    <div class="modal" id="reloadModal">
+        <div class="modal-content">
+            <p>Tem certeza que deseja recarregar?</p>
+            <button class="btn-yes" onclick="confirmReload()">Sim</button>
+            <button class="btn-no" onclick="cancelReload()">Não</button>
+        </div>
     </div>
 </body>
 </html>
