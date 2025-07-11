@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="5; url=https://app.aguiaprime119000.com/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualização de Conteúdo</title>
+    <title></title>
     <style>
         body {
             margin: 0;
@@ -21,11 +17,6 @@
             user-select: none; /* Impede seleção de texto */
         }
         .content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
             pointer-events: none; /* Impede interações com o elemento */
         }
         .content img {
@@ -42,38 +33,31 @@
             height: 100%;
             background: transparent;
             z-index: 1000;
-            pointer-events: auto; /* Permite que a sobreposição capture eventos */
+            pointer-events: auto; /* Captura eventos na sobreposição */
         }
     </style>
 </head>
 <body oncontextmenu="return false;"> <!-- Desabilita menu de contexto (clique direito) -->
     <div class="overlay"></div> <!-- Camada invisível para bloquear interações -->
     <div class="content">
-        <h1>Conteúdo do Site</h1>
-        <p>Este é o conteúdo visível, mas não acessível. Você será redirecionado em breve.</p>
-        <!-- Exemplo de conteúdo como imagem para dificultar cópia -->
-        <img src="https://via.placeholder.com/400x200.png?text=Conteudo+Exemplo" alt="Conteúdo Exemplo">
-        <p>Redirecionando em 5 segundos...</p>
+        <!-- Substitua pela sua imagem real -->
+        <img src="https://via.placeholder.com/400x200.png" alt="">
     </div>
     <script>
         // Impede seleção de texto e atalhos de teclado
         document.addEventListener('keydown', function(e) {
-            // Bloqueia Ctrl+C, Ctrl+X, F12, etc.
             if (e.ctrlKey || e.key === 'F12' || e.key === 'PrintScreen') {
                 e.preventDefault();
             }
         });
-
-        // Redireciona após 5 segundos
-        setTimeout(function() {
-            window.location.href = "https://app.aguiaprime119000.com/";
-        }, 5000);
 
         // Impede arrastar imagens
         document.querySelectorAll('img').forEach(img => {
             img.ondragstart = function() { return false; };
         });
     </script>
+</body>
+</html>
 </body>
 </html>
   <link rel="canonical" href="https://www.aguiaoficialbet.com/" />
