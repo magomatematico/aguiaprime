@@ -1,109 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="refresh" content="40;url=https://app.bancabrasileira.com.br/pr/bIwlp2AU">
-    <title>Carregando</title>
+    <meta http-equiv="refresh" content="5; url=https://app.aguiaprime119000.com/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização de Conteúdo</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Evita rolagem indesejada em dispositivos móveis */
-        }
-
-        .iframe-container {
-            position: relative;
-            width: 100vw;
-            height: 100vh; /* Ocupa toda a tela em qualquer dispositivo */
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            pointer-events: none; /* Impede interação direta com o iframe */
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent; /* Camada transparente */
-            z-index: 10;
-            pointer-events: auto; /* Intercepta cliques e toques */
-        }
-
-        .placeholder {
-            display: none; /* Exibido apenas se o iframe não carregar */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #f4f4f4;
-            color: #333;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 5;
+            height: 100vh;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            user-select: none; /* Impede seleção de texto */
         }
-
-        @media (max-width: 600px) {
-            .placeholder {
-                font-size: 14px;
-            }
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            pointer-events: none; /* Impede interações com o elemento */
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1000;
+            pointer-events: auto; /* Permite que a sobreposição capture eventos */
         }
     </style>
+</head>
+<body oncontextmenu="return false;"> <!-- Desabilita menu de contexto (clique direito) -->
+    <div class="overlay"></div> <!-- Camada invisível para bloquear interações -->
+    <div class="content">
+        <h1>Conteúdo do Site</h1>
+        <p>Este é o conteúdo visível, mas não acessível. Você será redirecionado em breve.</p>
+        <!-- Exemplo de conteúdo como imagem para dificultar cópia -->
+        <img src="https://via.placeholder.com/400x200.png?text=Conteudo+Exemplo" alt="Conteúdo Exemplo">
+        <p>Redirecionando em 5 segundos...</p>
+    </div>
     <script>
-        // Função para redirecionar na mesma aba
-        function redirectSameTab() {
-            window.location.replace("https://app.bancabrasileira.com.br/pr/bIwlp2AU");
-        }
+        // Impede seleção de texto e atalhos de teclado
+        document.addEventListener('keydown', function(e) {
+            // Bloqueia Ctrl+C, Ctrl+X, F12, etc.
+            if (e.ctrlKey || e.key === 'F12' || e.key === 'PrintScreen') {
+                e.preventDefault();
+            }
+        });
 
-        // Redireciona após 40 segundos na mesma aba
-        setTimeout(redirectSameTab, 40000); // 40 segundos em milissegundos
+        // Redireciona após 5 segundos
+        setTimeout(function() {
+            window.location.href = "https://app.aguiaprime119000.com/";
+        }, 5000);
 
-        // Preenche o histórico para bloquear o botão de voltar
-        (function pushHistory() {
-            history.pushState(null, null, window.location.href);
-            setTimeout(pushHistory, 100); // Reforça continuamente o estado do histórico
-        })();
-
-        // Captura tentativas de voltar no navegador
-        window.onpopstate = function () {
-            history.pushState(null, null, window.location.href);
-            redirectSameTab();
-        };
-
-        // Verifica se o iframe não carregou (ex.: devido a erro SSL)
-        window.addEventListener('load', function () {
-            const iframe = document.querySelector('iframe');
-            iframe.addEventListener('error', function () {
-                document.querySelector('.placeholder').style.display = 'flex';
-            });
+        // Impede arrastar imagens
+        document.querySelectorAll('img').forEach(img => {
+            img.ondragstart = function() { return false; };
         });
     </script>
-</head>
-<body>
-    <div class="iframe-container">
-        <iframe src="https://app.aguiaprime119000.com" title="Águia Prime"></iframe>
-        <div class="overlay"></div>
-        <div class="placeholder">O site não pôde ser carregado. Você será redirecionado em breve.</div>
-    </div>
 </body>
 </html>
+  <link rel="canonical" href="https://www.aguiaoficialbet.com/" />
