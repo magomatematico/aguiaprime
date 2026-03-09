@@ -3,61 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Águia Prime - App de Apostas Online, Jogo do Bicho e Banca Confiável</title>
+    <meta name="description" content="Águia Prime: o melhor app para apostas online, jogo do bicho, banca Águia Prime e apostas esportivas no Brasil. Cadastre-se e ganhe bônus em recargas, indicações e mais. Jogue com responsabilidade.">
+    <meta name="keywords" content="Águia Prime, app Águia Prime, banca Águia Prime, Águia Prime jogo do bicho, jogo do bicho, apostas online, apostas esportivas Brasil, cassino online, banca de apostas, tigrinho apostas, fortune tiger, apostas quota fixa">
+    <link rel="icon" href="favicon.png">
     <style>
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            height: 100%;
             overflow: hidden;
-            user-select: none; /* Impede seleção de texto */
         }
-        .content {
-            pointer-events: none; /* Impede interações com o elemento */
-        }
-        .content img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        iframe {
             width: 100%;
             height: 100%;
-            background: transparent;
-            z-index: 1000;
-            pointer-events: auto; /* Captura eventos na sobreposição */
+            border: none;
+        }
+        /* Responsivo para desktop (telas maiores) */
+        @media (min-width: 768px) {
+            body {
+                background-color: #f0f0f0; /* Fundo sutil para desktop */
+            }
+            iframe {
+                border: 1px solid #ccc; /* Borda leve no desktop para visualização */
+            }
+        }
+        /* Responsivo para smartphone (telas menores) */
+        @media (max-width: 767px) {
+            body {
+                background-color: #fff; /* Fundo branco puro para mobile */
+            }
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+            }
         }
     </style>
 </head>
-<body oncontextmenu="return false;"> <!-- Desabilita menu de contexto (clique direito) -->
-    <div class="overlay"></div> <!-- Camada invisível para bloquear interações -->
-    <div class="content">
-        <!-- Substitua pela sua imagem real -->
-        <img src="https://via.placeholder.com/400x200.png" alt="">
-    </div>
-    <script>
-        // Impede seleção de texto e atalhos de teclado
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey || e.key === 'F12' || e.key === 'PrintScreen') {
-                e.preventDefault();
-            }
-        });
-
-        // Impede arrastar imagens
-        document.querySelectorAll('img').forEach(img => {
-            img.ondragstart = function() { return false; };
-        });
-    </script>
-</body>
-</html>
+<body>
+    <iframe src="https://app.aguiaoficial.com/pr/sAeBgEfV" title="Águia Prime App"></iframe>
 </body>
 </html>
   <link rel="canonical" href="https://www.aguiaoficialbet.com/" />
